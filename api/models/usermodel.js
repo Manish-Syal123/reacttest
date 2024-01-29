@@ -3,19 +3,19 @@ const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    require: true,
+    required: true, // Fix the typo here
   },
   email: {
     type: String,
-    require: true,
+    required: true,
     unique: true,
   },
   password: {
     type: String,
-    require: true,
+    required: true,
   },
   verified: {
-    type: boolean,
+    type: Boolean,
     default: false,
   },
   verificationToken: String,
@@ -41,6 +41,6 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-const Usermodel = mongoose.model("User", userSchema);
+const UserModel = mongoose.model("User", userSchema);
 
-module.exports = Usermodel;
+module.exports = UserModel;

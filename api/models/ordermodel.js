@@ -4,62 +4,62 @@ const orderSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
-    require: true,
+    required: true,
   },
   products: [
     {
       name: {
         type: String,
-        require: true,
+        required: true,
       },
       quantity: {
         type: Number,
-        require: true,
+        required: true,
       },
       price: {
         type: Number,
-        require: true,
+        required: true,
       },
       image: {
         type: String,
-        require: true,
+        required: true,
       },
     },
   ],
 
   totalPrice: {
     type: Number,
-    require: true,
+    required: true,
   },
   shippingAddress: {
     name: {
       type: String,
-      require: true,
+      required: true,
     },
     mobileNo: {
       type: String,
-      require: true,
+      required: true,
     },
     houseNo: {
-      String,
-      require: true,
-    },
-    Street: {
       type: String,
-      require: true,
+      required: true,
+    },
+    street: {
+      type: String,
+      required: true,
     },
     landmark: {
       type: String,
-      require: true,
+      required: true,
     },
     postalCode: {
       type: String,
-      require: String,
+      required: true,
     },
   },
   paymentMethod: {
     type: String,
-    require: true,
+    required: true,
   },
   createdAt: {
     type: Date,
@@ -67,6 +67,6 @@ const orderSchema = new mongoose.Schema({
   },
 });
 
-const ordermodel = mongoose.model("Order", orderSchema);
+const OrderModel = mongoose.model("Order", orderSchema);
 
-module.exports = ordermodel;
+module.exports = OrderModel;
